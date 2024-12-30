@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="register.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+</head>
+<body>
+    <section>
+
+        <div id="container">
+            <h1 style="color: white;">Register</h1><br><br>
+            <div class="box">
+                <span><i class="fa-regular fa-user"></i></span>
+                <input type="text" name="userName" id="username" required >
+                <label for="">UserName</label>
+            </div><br>
+            <div class="box">
+                <span><i class="fa-solid fa-file-signature"></i></span>
+                <input type="text" name="nickname" id="nickname" required >
+                <label for="">NickName</label>
+            </div><br>
+            <div class="box">
+                <span><i class="fa-regular fa-envelope"></i></span>
+                <input type="email" name="email" id="email" required >
+                <label for="">Email</label>
+    
+            </div><br>
+            <div class="box">
+                <span><i class="fa-solid fa-lock"></i></span>
+                <span class="off"><i class="fa-solid fa-unlock"></i></span>
+                <input type="password" name="password" id="password" required>
+                <label for="">password</label>
+            </div><br>
+            <div class="box">
+                <span><i class="fa-solid fa-lock"></i></span>
+                    <span class="off"><i class="fa-solid fa-unlock"></i></span>
+                <input type="password" name="confirm_password" id="cpassword" required >
+                <label for="">confirm_password</label>
+            </div><br>
+            <div id="btn">
+                <button>Register</button>
+            </div>
+    
+        </div>
+    </section>
+
+
+
+    <script>
+        username=document.getElementById("username")
+        nickname=document.getElementById("nickname")
+        email=document.getElementById("email")
+        password=document.getElementById("password")
+        cpassword=document.getElementById("cpassword")
+
+        
+        
+        document.getElementById("btn").addEventListener("click",()=>{
+            localStorage.setItem("username",username.value)
+            localStorage.setItem("nickname",nickname.value)
+            localStorage.setItem("email",email.value)
+            localStorage.setItem("password",password.value)
+            localStorage.setItem("cpassword",cpassword.value)
+            if(username.value!=="" && nickname.value!=="" && email.value!=="" && password.value!=="" && cpassword.value!==""){
+
+                open("./login.html")
+            }
+            else{
+                alert("enter user inputs")
+            }
+        username.value=""
+        nickname.value=""
+        email.value="" 
+        password.value=""
+        cpassword.value=""
+        })
+    </script>
+</body>
+</html>
